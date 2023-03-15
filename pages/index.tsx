@@ -6,7 +6,7 @@ export default function Home() {
   const [name, setName] = useState('test');
   const inputRef = useRef(null);
 
-  useEffect( () => {
+  useEffect(() => {
     inputRef.current.focus();
   }, []);
 
@@ -18,11 +18,44 @@ export default function Home() {
       </Head>
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center ">
-        <h1 className="text-4xl font-bold mb-16 text-gray-600">Client-side avatars</h1>
-        <Jdenticon size="100" value={name || 'test'} />
-        <div className="mt-8 flex gap-8 items-center w-full">
+        <h1 className="mb-16 text-4xl font-bold text-gray-600">
+          Client-side avatars
+        </h1>
+        <div className="flex gap-4 items-center">
+          <Jdenticon size="50" value={name || 'test'} />
+          <div className="overflow-hidden rounded-full border border-gray-300 ">
+            <Jdenticon size="50" value={name || 'test'} />
+          </div>
+          <div className="overflow-hidden rounded-full border border-gray-300 ">
+            <div className="-m-1 overflow-hidden rounded">
+              <Jdenticon size="50" value={name || 'test'} />
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-full border border-gray-300 ">
+            <div className="-m-1.5 overflow-hidden rounded">
+              <Jdenticon size="50" value={name || 'test'} />
+            </div>
+          </div>
+        </div>
+        <div className="mt-8 flex gap-4 items-center">
+          <Jdenticon size="25" value={name || 'test'} />
+          <div className="overflow-hidden rounded-full border border-gray-300 ">
+            <Jdenticon size="25" value={name || 'test'} />
+          </div>
+          <div className="overflow-hidden rounded-full border border-gray-300 ">
+            <div className="-m-1 overflow-hidden rounded">
+              <Jdenticon size="25" value={name || 'test'} />
+            </div>
+          </div>
+          <div className="overflow-hidden rounded-full border border-gray-300 ">
+            <div className="-m-1.5 overflow-hidden rounded">
+              <Jdenticon size="25" value={name || 'test'} />
+            </div>
+          </div>
+        </div>
+        <div className="mt-8 flex w-full items-center gap-8">
           <input
-            className="border p-2 flex-1 border-gray-500 rounded max-w-lg mx-auto"
+            className="mx-auto max-w-lg flex-1 rounded border border-gray-300 p-2"
             placeholder="Type your name"
             ref={inputRef}
             type="text"
